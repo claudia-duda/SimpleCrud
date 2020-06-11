@@ -3,8 +3,17 @@
 @section('content')
 <h1 class="text-center">Cadastrar</h1>
 <div class="col-8, m-auto">
-  
-    <form action="{{url('clients/store')}}" method="post" name='formCad' if="formCad">
+    
+        @if(isset($errors) && count($errors)>0)
+            <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                @foreach($errors->all() as $erro)
+                    {{$erro}}<br>
+
+                @endforeach
+            </div>
+        @endif
+
+    <form action="{{url('clients/store')}}" method="post" name='formCad' id="formCad">
         @csrf
         
         <fieldset>
@@ -34,53 +43,53 @@
             <input type="text" class="form-control" name="identificacao" id="identificacao" placeholder="CNPJ/CPF" required>
         </div>
             
-    </fieldset>
-    <fieldset>
-        <legend>
-            <h2>Endereço da entidade</h2>
-        </legend>
+        </fieldset>
+        <fieldset>
+            <legend>
+                <h2>Endereço da entidade</h2>
+            </legend>
 
-        <div class="field">
-            <label aria-label="Small" for="pais">Digite a sigla do pais</label>
-            <input type="text" class="form-control" name="pais" id="pais" placeholder="ex: BR" required>
-        </div>
+            <div class="field">
+                <label aria-label="Small" for="pais">Digite a sigla do pais</label>
+                <input type="text" class="form-control" name="pais" id="pais" placeholder="ex: BR" required>
+            </div>
 
-        <div class="field">
-            <label aria-label="Small" for="estado">Digite a sigla do estado</label>
-            <input type="text" class="form-control" name="estado" id="estado" placeholder="ex: SP" required>
-        </div>
+            <div class="field">
+                <label aria-label="Small" for="estado">Digite a sigla do estado</label>
+                <input type="text" class="form-control" name="estado" id="estado" placeholder="ex: SP" required>
+            </div>
 
-        <div class="field">
-            <label aria-label="Small" for="cidade">Digite a cidade</label>
-            <input type="text" class="form-control" name="cidade" id="cidade" placeholder="sua cidade aqui" required>
-        </div>
+            <div class="field">
+                <label aria-label="Small" for="cidade">Digite a cidade</label>
+                <input type="text" class="form-control" name="cidade" id="cidade" placeholder="sua cidade aqui" required>
+            </div>
 
-        <div class="field">
-            <label aria-label="Small" for="bairro">Digite a bairro</label>
-            <input type="text" class="form-control" name="bairro" id="bairro" placeholder="seu bairro aqui" required>
-        </div>        
+            <div class="field">
+                <label aria-label="Small" for="bairro">Digite a bairro</label>
+                <input type="text" class="form-control" name="bairro" id="bairro" placeholder="seu bairro aqui" required>
+            </div>        
+            
+            <div class="input-group-prepend">
+                <div class="field">
+                    <label aria-label="Small" for="CEP">Digite o CEP</label>
+                    <input type="number" class="form-control" name="CEP" id="CEP" placeholder="seu CEP aqui" required>
+                </div>
+
+                <div class="field">
+                    <label aria-label="Small" for="rua">Digite a rua</label>
+                    <input type="text" class="form-control" name="rua" id="rua" placeholder="sua rua aqui" required>
+                </div>
+
+                <div class="field">
+                    <label aria-label="Small"for="numero">Digite o numero</label>
+                    <input type="number" class="form-control" name="numero" id="numero" placeholder="ex: 143" required>
+                </div>
+            </div>
         
-        <div class="input-group-prepend">
-            <div class="field">
-                <label aria-label="Small" for="CEP">Digite o CEP</label>
-                <input type="number" class="form-control" name="CEP" id="CEP" placeholder="seu CEP aqui" required>
-            </div>
-
-            <div class="field">
-                <label aria-label="Small" for="rua">Digite a rua</label>
-                <input type="text" class="form-control" name="rua" id="rua" placeholder="sua rua aqui" required>
-            </div>
-
-            <div class="field">
-                <label aria-label="Small"for="numero">Digite o numero</label>
-                <input type="number" class="form-control" name="numero" id="numero" placeholder="ex: 143" required>
-            </div>
-        </div>
-     
-    </fieldset>
+        </fieldset>
 
         <input class="btn btn-primary" type="submit" value="Cadastrar">
-  
+    
     </form>
 
 </div>
