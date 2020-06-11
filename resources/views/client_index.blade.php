@@ -35,7 +35,7 @@
             {{ $client->CEP }} -{{ $client->pais }}
           </td>
           <td>
-            <a href="{{url("client/$client->id")}}">
+            <a href="{{ url("clients/$client->id") }}">
               <button class="btn btn-dark">Visualizar</button>
             </a>  
             <a href="">

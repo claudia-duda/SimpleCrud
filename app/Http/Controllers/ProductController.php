@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 use App\Models\ModelProduct;
 
 
@@ -35,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('create_product');
     }
 
     /**
@@ -44,7 +44,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {   
         $cad= $this->objProduct->create([
             'nome'=>$request->nome,
@@ -52,11 +52,11 @@ class ProductController extends Controller
             'tipo_item'=>$request->tipo_item,
             'preco_compra'=>$request->preco_compra,
             'preco_venda'=>$request->preco_venda
+            
         ]);
         if($cad){
-             return redirect('products');
-        }
-    
+            return redirect('products');
+        }       
     }
 
     /**
@@ -69,7 +69,7 @@ class ProductController extends Controller
     {
         $product = $this->objProduct->find($id);
 
-        return view('show', compact('product'));
+        return view('show_product', compact('product'));
     }
 
     /**
@@ -90,7 +90,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         //
     }

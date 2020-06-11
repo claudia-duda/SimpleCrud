@@ -17,8 +17,12 @@ Route::get('/', function(){
 });
 Route::get('/clients','ClientController@index');
 Route::get('/clients/create','ClientController@create');
-Route::get('/client/{client}','ClientController@show');
+Route::get('/clients/{client}','ClientController@show');
+Route::post('clients/store', 'ClientController@store');
 
+
+
+Route::post('products/store', 'ProductController@store');
 Route::get('/products','ProductController@index');
 Route::get('/products/create','ProductController@create');
 Route::get('/product/{product}','ProductController@show');

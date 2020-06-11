@@ -31,7 +31,7 @@ class ClientController extends Controller
      */
     public function create()
     {  
-        return view('createClient');
+        return view('create_client');
     }
 
     /**
@@ -42,7 +42,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $cad= $this->objClient-create([
+        $cad= $this->objClient->create([
             'nome_fantasia'=>$request->nome_fantasia,
             'razao_social'=>$request->razao_social,
             'tipo'=>$request->tipo,
@@ -52,10 +52,11 @@ class ClientController extends Controller
             'cidade'=>$request->cidade,
             'bairro'=>$request->bairro,
             'rua'=>$request->rua,
+            'CEP'=>$request->CEP,
             'numero'=>$request->numero            
         ]);
         if($cad){
-             return redirect('clients');
+            return redirect('clients');
         }
     }
 
@@ -68,7 +69,7 @@ class ClientController extends Controller
     public function show($id)
     {
         $client = $this->objClient->find($id);
-        return view('showClient', compact('client'));
+        return view('show_client', compact('client'));
     }
 
     /**

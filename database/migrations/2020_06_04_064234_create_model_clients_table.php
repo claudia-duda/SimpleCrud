@@ -17,7 +17,7 @@ class CreateModelClientsTable extends Migration
             $table->increments('id');
             $table->string('nome_fantasia');   
             $table->string('razao_social');
-            $table->enum('tipo', ['juridica', 'fisica']);
+            $table->string('tipo');
             $table->string('identificacao', 18);
             $table->char('pais', 2);
             $table->char('estado',2);

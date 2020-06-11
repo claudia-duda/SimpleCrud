@@ -17,7 +17,7 @@ class CreateModelProductsTable extends Migration
             $table->increments('id');
             $table->string('nome', 30);
             $table->uuid('codigo_estoque');
-            $table->enum('tipo_item', ['informatica','escritorio','limpeza']);
+            $table->string('tipo_item');
             $table->float('preco_compra');
             $table->float('preco_venda');
             $table->timestamps();
