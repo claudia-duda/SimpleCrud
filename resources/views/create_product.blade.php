@@ -48,7 +48,7 @@
                         <label aria-label="Small" for="tipo">Tipo do Produto</label>
 
                         <select name="tipo_item" id="tipo_item" required>
-                            <option value="{{$product->tipo_item ?? ''}}">{{$product->tipo_item ?? 'Selecione o Tipo do Produto'}}</option>
+                            <option value="{{$product->tipo_item ?? ''}}">{{ $product->tipo_item ?? 'Selecione o Tipo do Produto' }}</option>
                             <option value="Limpeza">Limpeza</option>
                             <option value="Informática">Informática</option>
                             <option value="Escritório">Escritório</option>

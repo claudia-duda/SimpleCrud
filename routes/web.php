@@ -15,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('home');
 });
-Route::get('/clients','ClientController@index');
-Route::get('/clients/create','ClientController@create');
-Route::get('/clients/{id}','ClientController@show');
+Route::get('clients','ClientController@index');
+Route::get('clients/create','ClientController@create');
+Route::get('clients/{id}','ClientController@show');
 Route::post('clients/store', 'ClientController@store');
+Route::get('clients/{id}/edit', 'ClientController@edit');
+Route::put('clients/{id}', 'ClientController@update');
 
 
 

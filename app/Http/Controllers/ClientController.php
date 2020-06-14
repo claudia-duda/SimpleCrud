@@ -80,7 +80,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = $this->objClient->find($id);
+        return view('create_client', compact('client'));
     }
 
     /**
@@ -92,7 +93,21 @@ class ClientController extends Controller
      */
     public function update(ClientRequest $request, $id)
     {
-        //
+        $this->objClient->where(['id'=>$id])->update([
+        
+            'nome_fantasia'=>$request->nome_fantasia,
+            'razao_social'=>$request->razao_social,
+            'tipo'=>$request->tipo,
+            'identificacao'=>$request->identificacao,
+            'pais'=>$request->pais,
+            'estado'=>$request->estado,
+            'cidade'=>$request->cidade,
+            'bairro'=>$request->bairro,
+            'rua'=>$request->rua,
+            'CEP'=>$request->CEP,
+            'numero'=>$request->numero 
+        ]);
+        return redirect('clients');
     }
 
     /**
