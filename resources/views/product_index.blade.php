@@ -31,10 +31,10 @@
             <td>{{ $product->preco_compra }}<strong>R$</strong></td>
             <td>{{ $product->preco_venda }}<strong>R$</strong></td>
             <td>
-              <a href="{{url("product/$product->id")}}">
+              <a href="{{url("products/$product->id")}}">
                 <button class="btn btn-dark">Visualizar</button>
               </a>  
-              <a href="">
+              <a href="{{url("products/$product->id/edit")}}">
                 <button class="btn btn-primary">Editar</button>
               </a>
               <a href="">

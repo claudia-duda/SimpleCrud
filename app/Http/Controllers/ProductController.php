@@ -80,7 +80,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = $this->objProduct->find($id);
+
+        return view('create_product', compact('product'));
     }
 
     /**
@@ -92,7 +94,15 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, $id)
     {
-        //
+        $this->objProduct->where(['id'=>$id])->update([
+            'nome'=>$request->nome,
+            'codigo_estoque'=>$request->codigo_estoque,
+            'tipo_item'=>$request->tipo_item,
+            'preco_compra'=>$request->preco_compra,
+            'preco_venda'=>$request->preco_venda
+            
+        ]);
+        return redirect('products');
     }
 
     /**

@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'nome'=>'required|min:3|max:100',
-            'codigo_estoque'=>'required|numeric|max:200',
+            'codigo_estoque'=>'required|max:200',
             'tipo_item'=>'required|max:100',
             'preco_compra'=>'required',
             'preco_venda'=>'required'
