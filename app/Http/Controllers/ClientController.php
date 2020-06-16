@@ -118,6 +118,8 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del = $this->objClient->destroy($id);
+        return($del) ? "sim": "não";
+         
     }
 }

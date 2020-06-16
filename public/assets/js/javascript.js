@@ -14,7 +14,7 @@
            console.log("DELETE",event.target.parentNode.href);
            ajax.onreadystatechange=function(){
                if(ajax.readyState === 4 && ajax.status === 200){
-                   win.location.href="products";
+                window.location.reload();
                }
            };
            ajax.send();

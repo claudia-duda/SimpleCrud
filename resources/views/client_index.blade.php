@@ -8,6 +8,7 @@
     </a>    
   </div>
   <div class="col-8, m-auto">
+   @csrf
     <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -41,7 +42,7 @@
             <a href="{{ url("clients/$client->id/edit") }}">
               <button class="btn btn-primary">Editar</button>
             </a>
-            <a href="">
+            <a class="js-del" href="{{ url("clients/$client->id") }}">
               <button class="btn btn-danger">Deletar</button>
             </a>
           </td>

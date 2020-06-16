@@ -38,7 +38,7 @@
             <a href="{{ url("products/$product->id/edit") }}">
               <button class="btn btn-primary">Editar</button>
             </a>
-            <a class="js-del" href="{{ url("products/$product->id") }}" >
+            <a class="js-del" href="{{ url("products/$product->id") }}">
               <button class="btn btn-danger">Deletar</button>
             </a>
           </td>
