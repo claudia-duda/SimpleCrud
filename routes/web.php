@@ -30,3 +30,4 @@ Route::get('products/create','ProductController@create');
 Route::get('products/{id}','ProductController@show');
 Route::get('products/{id}/edit', 'ProductController@edit');
 Route::put('products/{id}', 'ProductController@update');
+Route::delete('products/{id}', 'ProductController@destroy');
