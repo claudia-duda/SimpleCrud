@@ -20,7 +20,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = $this->objClient->all();
+        $clients = $this->objClient->paginate(5);
         return view('client_index', compact('clients'));
     }
 

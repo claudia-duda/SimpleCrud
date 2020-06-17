@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function index()
     {   
         //if product else client
-        $products= $this->objProduct->all();
+        $products= $this->objProduct->paginate(5);
         return view('product_index', compact('products'));
     }
 
